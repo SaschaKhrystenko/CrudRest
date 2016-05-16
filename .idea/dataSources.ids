@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - shop_line@localhost" uuid="10ed3cc4-0204-416b-9e28-933d2f82eeb4">
+    <database-info product="MySQL" version="5.1.73-community" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="shop_line"/>
+    <table name="product" schema="" catalog="shop_line" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="mpn" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_dt4mofousqugrfofkeqfiumn3" table="product_shop" schema="" catalog="shop_line" columns="product_id"/>
+      <index name="mpn" unique="true" columns="mpn"/>
+    </table>
+    <table name="product_shop" schema="" catalog="shop_line" type="TABLE">
+      <column name="shop_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="product_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_cwep3wyq5hdvce5ls6p5oc11p" columns="shop_id" ref-table="shop" ref-schema="" ref-catalog="shop_line" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_dt4mofousqugrfofkeqfiumn3" columns="product_id" ref-table="product" ref-schema="" ref-catalog="shop_line" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_cwep3wyq5hdvce5ls6p5oc11p" unique="false" columns="shop_id"/>
+      <index name="FK_dt4mofousqugrfofkeqfiumn3" unique="false" columns="product_id"/>
+    </table>
+    <table name="shop" schema="" catalog="shop_line" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="stock" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_cwep3wyq5hdvce5ls6p5oc11p" table="product_shop" schema="" catalog="shop_line" columns="shop_id"/>
+      <index name="FK274F16B9D5DB4" unique="false" columns="id"/>
+    </table>
+  </data-source>
+</component>
