@@ -41,4 +41,8 @@ public class ProductServiceImp implements ProductService{
             productRepository.saveAndFlush(product);
 
     }
+
+    public List<Product> getProductsByShop(Integer shopId) {
+        return productRepository.getProductsByShop(shopId);
+    }
 }

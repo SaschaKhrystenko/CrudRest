@@ -37,7 +37,7 @@ public class ShopServiceImp implements ShopService {
             shopRepository.delete(shopId);
     }
 
-   /* public List<Shop> findShopsByProduct(String prodName) {
+    public List<Shop> findShopsByProduct(String prodName) {
         return shopRepository.findShopsByProduct(prodName);
-    }*/
+    }
 }

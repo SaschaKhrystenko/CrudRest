@@ -14,5 +14,5 @@ public interface ShopService {
     public void saveShop(Shop shop );
     public void updateShop(Shop oldShop);
     public void deleteShop(Integer shopId);
-   // public List<Shop> findShopsByProduct(String prodName);
+    public List<Shop> findShopsByProduct(String prodName);
 }

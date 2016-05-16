@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/products")
 public class ProductRestController {
@@ -49,5 +51,8 @@ public class ProductRestController {
         productService.updateProduct(product);
     }
 
-
+    @RequestMapping(value = "/shop{shopId}",method = RequestMethod.GET)
+    public List<Product> getProductsByShopId(@PathVariable("shopId")Integer shopId){
+        return productService.getProductsByShop(shopId);
+    }
 }

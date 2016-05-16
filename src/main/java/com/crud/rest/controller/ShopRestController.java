@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/shops")
 public class ShopRestController {
@@ -42,10 +44,13 @@ public class ShopRestController {
         shopService.updateShop(shop);
     }
 
-    /*@RequestMapping(value = "/product/{name}",method = RequestMethod.GET)
+
+    @RequestMapping(value = "/product/{productName}",method = RequestMethod.GET)
     @ResponseBody
     public List<Shop> getShopsByProductName(@PathVariable String productName){
         return shopService.findShopsByProduct(productName);
-    }*/
+    }
+
+
 
 }
