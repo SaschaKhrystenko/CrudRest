@@ -22,7 +22,7 @@ public class ProductRestController {
         return productService.getAllProducts();
     }
 
-    @RequestMapping(method = RequestMethod.POST, consumes = "application/json", headers = "content-type = application/json")
+    @RequestMapping(method = RequestMethod.POST,consumes = "application/json", headers = "content-type = application/json")
     public void addProduct(@RequestBody Product product) {
         productService.saveProduct(product);
     }
@@ -51,8 +51,9 @@ public class ProductRestController {
         productService.updateProduct(product);
     }
 
-    @RequestMapping(value = "/shop{shopId}",method = RequestMethod.GET)
-    public List<Product> getProductsByShopId(@PathVariable("shopId")Integer shopId){
+    @RequestMapping(value = "/shop/{shopId}",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Product> getProductsByShopId(@PathVariable Integer shopId){
         return productService.getProductsByShop(shopId);
     }
 }
